@@ -18,9 +18,17 @@ var stopC = make(chan int,1)
 var monitorCmd = &cobra.Command{
 	Use:   "monitor",
 	Short: "监控软考平台，出成绩后将第一时间查询出成绩并通过邮件发送给您",
-	Long: `监控软考平台，出成绩后将第一时间查询出成绩并通过邮件发送给您 config.json 配置文件中所需参数： 0.year->考试时间(建议查询之前先执行showExaminationTimeCmd 查看所有考试时间),
-1.name->姓名，2.id_card->身份证,3.appsecret->六派数据的appsecret信息(用于解析验证码,一个手机号码可领取10次免费解析机会,六派数据网站地址为:https://www.6api.net/my/),解析验证码申请地址 https://www.6api.net/api/captcha/
-4.send_user_163_mail_address->邮件发送者163用户账号,5.send_user_163_mail_auth_code->邮件发送者163邮箱授权码,6.receive_user_163_mail_address->邮件接收者邮箱地址,7.time_interval->轮询间隔时间,单位为分钟,最小为1(定时去软考网检测分数是否可查,一旦可查立马发邮件给您)`,
+	Long: `
+监控软考平台，出成绩后将第一时间查询出成绩并通过邮件发送给您 
+config.json 配置文件中所需参数：
+0.year->考试时间(建议查询之前先执行showExaminationTimeCmd 查看所有考试时间)
+1.name->姓名
+2.id_card->身份证
+3.appsecret->六派数据的appsecret信息(用于解析验证码,一个手机号码可领取10次免费解析机会,六派数据网站地址为:https://www.6api.net/my/) 解析验证码申请地址 https://www.6api.net/api/captcha/
+4.send_user_163_mail_address->邮件发送者163用户账号
+5.send_user_163_mail_auth_code->邮件发送者163邮箱授权码
+6.receive_user_163_mail_address->邮件接收者邮箱地址
+7.time_interval->轮询间隔时间,单位为分钟,最小为1(定时去软考网检测分数是否可查,一旦可查立马发邮件给您)`,
 	Run: runMonitorCmd,
 }
 
