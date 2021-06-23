@@ -7,7 +7,7 @@
 SoftTestMonitor
 -----------
 [![Go Documentation](http://img.shields.io/badge/go-documentation-blue.svg?style=flat-square)](https://godoc.org/github.com/1340691923/SoftTestMonitor)
-[![license](https://img.shields.io/github/license/mashape/apistatus.svg?maxAge=2592000)](https://github.com/1340691923/SoftTestMonitor/blob/main/LICENSE)
+[![license](https://img.shields.io/github/license/mashape/apistatus.svg?maxAge=2592000)](https://github.com/1340691923/SoftTestMonitor/blob/master/LICENSE)
 [![Release](https://img.shields.io/github/release/1340691923/ElasticView.svg?label=Release)](https://github.com/1340691923/SoftTestMonitor/releases/latest)
 > SoftTestMonitor 软考成绩监控快查工具(该工具仅供学习参考)
  * 通过配置文件或命令行输入信息手动查询往年成绩
