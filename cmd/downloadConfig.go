@@ -30,6 +30,6 @@ var downloadConfigCmd = &cobra.Command{
 
 
 func init() {
-	rootCmd.Flags().StringVarP(&configFileName, "configFileName", "c", "config", "参数配置文件名(后缀不用写,为固定的.json)")
+	downloadConfigCmd.Flags().StringVarP(&configFileName, "configFileName", "c", "config", "参数配置文件名(后缀不用写,为固定的.json)")
 	rootCmd.AddCommand(downloadConfigCmd)
 }
