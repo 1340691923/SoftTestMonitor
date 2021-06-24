@@ -29,21 +29,16 @@ func httpReq(method string, uri string, headMap map[string]string, cookies []*ht
 		}
 		return resp, nil
 	case http.MethodGet:
-
 		req, _ = http.NewRequest(method, uri, nil)
-
 		for k, v := range headMap {
 			req.Header.Add(k, v)
 		}
-
 		resp, err := client.Do(req)
 		if err != nil {
 			return nil, err
 		}
-
 		return resp, nil
 	}
-
 	return nil, nil
 }
 

@@ -22,8 +22,8 @@ config.json 配置文件中所需参数：
 1.name->姓名
 2.id_card->身份证
 3.appsecret->六派数据的appsecret信息(用于解析验证码,一个手机号码可领取10次免费解析机会,六派数据网站地址为:https://www.6api.net/my/),解析验证码申请地址 https://www.6api.net/api/captcha/
-4.send_user_163_mail_address->邮件发送者163用户账号
-5.send_user_163_mail_auth_code->邮件发送者163邮箱授权码
+4.send_user_163_mail_address->邮件发送者126用户账号
+5.send_user_163_mail_auth_code->邮件发送者126邮箱授权码
 6.receive_user_163_mail_address->邮件接收者邮箱地址
 `,
 	Run: runManuallyQueryScoreCmd,
@@ -101,6 +101,7 @@ func runManuallyQueryScoreCmd(cmd *cobra.Command, args []string){
 	wg := sync.WaitGroup{}
 	wg.Add(1)
 	go func() {
+		defer wg.Done()
 		var buffer bytes.Buffer
 		buffer.WriteString("分数获取成功->")
 		buffer.WriteString("考试时间：")
@@ -122,7 +123,6 @@ func runManuallyQueryScoreCmd(cmd *cobra.Command, args []string){
 			fmt.Println(fmt.Sprintf("邮箱发送异常:%v",err.Error()))
 			return
 		}
-		wg.Done()
 	}()
 
 	fmt.Println("分数获取成功----------->")
