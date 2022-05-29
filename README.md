@@ -22,11 +22,11 @@ SoftTestMonitor
  
  ## 使用教程
  > 手动查询成绩
- * 第一步：下载配置文件 运行 ./SoftTestMonitor downloadConfig -c config
+ * 第一步：下载配置文件 运行 ./SoftTestMonitor downloadConfig -c 
  * 第二步：根据help里的内容完善json配置文件 运行 ./SoftTestMonitor manuallyQueryScore -h 如 year->考试时间 配置中year则可填 2021年上半年
  * 第三步: 查询成绩 运行 ./SoftTestMonitor manuallyQueryScore -c config.json 即可查询出成绩输出并发送邮件至用户邮箱
  
   > 监听软考网站并在第一时间自动查询成绩发送至用户邮箱
-  * 第一步：下载配置文件 运行 ./SoftTestMonitor downloadConfig -c config
+  * 第一步：下载配置文件 运行 ./SoftTestMonitor downloadConfig -c 
   * 第二步：根据help里的内容完善json配置文件 运行 ./SoftTestMonitor monitor -h 如 time_interval->轮询时间间隔（单位为分）可填 数字 3
   * 第三步: 查询成绩发送至用户邮箱 运行 ./SoftTestMonitor monitor -c config.json 即可常驻内存，轮询软考网，当出考试成绩时自动查询成绩输出并发送邮件至用户邮箱（推荐将其置于后台运行 nohup ./SoftTestMonitor monitor -c config.json > monitor.log &）
